@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Define directories and files to clean
+TEMP_DIRS=(
+    "$HOME/.zsh_sessions"   # zsh session files
+    "$HOME/tmp"             # tmp directory (if exists in home)
+)
+
+# Define file patterns to delete
+TEMP_FILES=(
+    "$HOME/*.tmp"           # Any .tmp files in home directory
+    "$HOME/*.swp"           # Vim swap files
+    "$HOME/*.log"           # Log files in home directory
+    "$HOME/*.DS_Store"      # .DS_Store files on macOS
+)
+
+# Delete temporary directories
+for dir in "${TEMP_DIRS[@]}"; do
+    if [ -d "$dir" ]; then
+        echo "Removing directory: $dir"
+        rm -rf "$dir"
+    fi
+done
+
+# Delete temporary files
+for file_pattern in "${TEMP_FILES[@]}"; do
+    echo "Removing files matching pattern: $file_pattern"
+    rm -f $file_pattern
+done
+
+echo "Temporary files and directories cleaned."
