@@ -3,7 +3,7 @@ class Gitp < Formula
     homepage "https://github.com/minjunkevink/CustomBinaries"
     url "https://github.com/minjunkevink/CustomBinaries/archive/refs/heads/main.zip"
     version "1.0.0"
-    sha256 "0534bf9fdf75356d66dcf0d74a9b16d802b30bb7051bd8d87745c3339eae286b"
+    sha256 "4a3581ddb149dc392eb743f82764b98ccacd195448402033c5db0087c6d84599"
   
     def install
       bin.install "bin/gitp"
